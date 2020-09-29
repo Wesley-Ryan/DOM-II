@@ -1,15 +1,15 @@
 // Your code goes here
 
 /*
-mouseover nav 
-keydown 
-wheel  img 
-load
+mouseover - nav link change 
+keydown - banner img changes to cat
+wheel - alert pops up 
+load - alert lame i know 
 focus
 resize
 scroll
 select
-dblclick
+dblclick - nav link go back 
 drag / drop
 
 Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
@@ -25,7 +25,7 @@ const images = document.querySelectorAll(".img-content");
 
 const destination = document.querySelectorAll(".destination");
 
-//events
+//  ***EVENTS***
 
 //mouseover
 nav.forEach((navItem) => {
@@ -39,9 +39,24 @@ nav.forEach((navItem) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key == "Escape") {
-    bannerImage.src = "img/destination.jpg";
+    bannerImage.src =
+      "https://cdn.shopify.com/s/files/1/0344/6469/files/Yamazaki9.jpg?v=1518535612";
   }
 });
+
+//wheel
+const popUp = () => {
+  alert("Where are you going? ");
+};
+
+bannerImage.addEventListener("wheel", popUp);
+
+//load
+
+window.addEventListener("load", (event) => {
+  alert("page is fully loaded");
+});
+
 //dblClick
 
 nav.forEach((navItem) => {

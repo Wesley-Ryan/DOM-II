@@ -5,9 +5,9 @@ mouseover - nav link change
 keydown - banner img changes to cat
 wheel - alert pops up 
 load - alert lame i know 
-focus
-resize
-scroll
+focus - focus on footer and h4 change in style
+resize - Console.log the size of the window 
+scroll - 
 select
 dblclick - nav link go back 
 drag / drop
@@ -24,6 +24,10 @@ const bannerImage = document.querySelector("img");
 const images = document.querySelectorAll(".img-content");
 
 const destination = document.querySelectorAll(".destination");
+
+const button = document.querySelector(".btn");
+
+const footer = document.querySelector(".footer");
 
 //  ***EVENTS***
 
@@ -56,6 +60,30 @@ bannerImage.addEventListener("wheel", popUp);
 window.addEventListener("load", (event) => {
   alert("page is fully loaded");
 });
+
+//focus
+const changeH4s = () => {
+  destination.forEach((items) => {
+    let h4 = items.querySelector("h4");
+    h4.style.background = "pink";
+    h4.style.color = "white";
+    h4.style.textAlign = "center";
+    h4.style.fontSize = "30px";
+    h4.style.borderRadius = "20px";
+  });
+};
+
+footer.addEventListener("click", changeH4s);
+
+//resize
+
+const showSize = () => {
+  console.log(
+    `Window Height: ${window.innerHeight} and the Window width is ${window.innerWidth}`
+  );
+};
+
+window.addEventListener("resize", showSize);
 
 //dblClick
 
